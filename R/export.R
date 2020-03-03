@@ -43,11 +43,11 @@ convert_pptx <- function(path, author, title = NULL, sub = NULL,
     unlink(file.path(out_dir, folder, recursive = TRUE, force = TRUE))
   }
 
-  lang_return <- tryCatch(check_lang(xml), error = function(e) e)
-  if(!is.null(lang_return$message)) {
-    unlink("assets", recursive = TRUE)
-    stop(lang_return$message)
-  }
+  #lang_return <- tryCatch(check_lang(xml), error = function(e) e)
+  #if(!is.null(lang_return$message)) {
+  #  unlink("assets", recursive = TRUE)
+  #  stop(lang_return$message)
+  #}
 
   slds <- import_slide_xml(xml)
   rels <- import_rel_xml(xml)
